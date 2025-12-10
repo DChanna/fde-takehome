@@ -1,0 +1,11 @@
+account_number,debtor_name,phone_number,balance,status,client_name
+ACC001,John Smith,555-123-4567,1250.00,Active,Acme Medical
+ACC002,Jane Doe,555-987-6543,3500.50,Active,City Hospital
+ACC003,Robert Johnson,555-456-7890,750.25,Closed,Acme Medical
+ACC004,Maria Garcia,555-321-0987,2100.00,Active,Metro Clinic
+ACC005,David Wilson,555-654-3210,500.00,Active,City Hospital
+ACC006,Sarah Brown,555-789-0123,8900.75,Active,Regional Health
+ACC007,Michael Davis,555-012-3456,1500.00,Closed,Acme Medical
+ACC008,Emily Taylor,555-345-6789,425.50,Active,Metro Clinic
+ACC009,James Anderson,555-678-9012,6200.00,Active,City Hospital
+ACC010,Lisa Martinez,555-901-2345,1800.25,Active,Regional Health
