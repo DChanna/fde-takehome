@@ -2,6 +2,7 @@
 
 const express = require('express');
 const { initDb, findAccountByNumber, getAccountCount } = require('./db');
+const { ingestCSV, DEFAULT_CSV_PATH } = require('./ingest');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -142,6 +143,9 @@ app.use((err, req, res, next) => {
 async function start() {
   try {
     await initDb();
+    const csvPath = process.env.CSV_PATH || DEFAULT_CSV_PATH;
+    console.log(`Auto-ingesting CSV at startup from ${csvPath}`);
+    await ingestCSV(csvPath);
     console.log('✅ Database initialized');
     
     app.listen(PORT, '0.0.0.0', () => {

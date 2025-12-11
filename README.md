@@ -7,6 +7,7 @@ Node.js + SQLite (sql.js) service that ingests Atlas Recovery’s account CSV an
 npm install
 npm run ingest             # uses atlas_inventory.csv by default
 npm start                  # PORT defaults to 3000
+# On deploy/start, the server auto-runs ingestion from atlas_inventory.csv (override with CSV_PATH)
 ```
 
 ## What’s Inside (brief)

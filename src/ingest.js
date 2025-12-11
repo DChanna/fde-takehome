@@ -56,10 +56,7 @@ async function ingestCSV(csvPath) {
   
   // Check if file exists
   if (!fs.existsSync(csvPath)) {
-    console.error(`\n❌ Error: CSV file not found at '${csvPath}'`);
-    console.log('\nUsage: npm run ingest [path/to/csv]');
-    console.log('       Default path: atlas_inventory.csv\n');
-    process.exit(1);
+    throw new Error(`CSV file not found at '${csvPath}'`);
   }
 
   console.log(`\n📂 Processing: ${csvPath}`);
@@ -156,12 +153,17 @@ async function ingestCSV(csvPath) {
 }
 
 // Main execution
-const csvPath = process.argv[2] || DEFAULT_CSV_PATH;
-ingestCSV(csvPath)
-  .then(() => {
-    process.exit(0);
-  })
-  .catch(err => {
-    console.error('Ingestion failed:', err);
-    process.exit(1);
-  });
+if (require.main === module) {
+  const csvPath = process.argv[2] || DEFAULT_CSV_PATH;
+  ingestCSV(csvPath)
+    .then(() => process.exit(0))
+    .catch(err => {
+      console.error('Ingestion failed:', err);
+      process.exit(1);
+    });
+}
+
+module.exports = {
+  ingestCSV,
+  DEFAULT_CSV_PATH
+};
