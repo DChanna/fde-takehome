@@ -44,12 +44,12 @@ Our system will skip (and log) any rows that:
 - Are missing an `account_number`
 - Have a non-numeric value in the `balance` column (like "TBD" or blank with quotes)
 
-You'll receive a summary after each upload showing how many records were processed, inserted, updated, and skipped.
+Each ingest run logs a summary showing how many records were processed, inserted, updated, and skipped.
 
 ## What You Need to Do
 
 1. **Prepare your CSV** with the columns listed above (header row required)
-2. **Ensure account numbers are unique** within each file
+2. **Ensure account numbers are unique** for unique debtors
 3. **Use numeric values for balance** (e.g., `1250.00` not `$1,250`)
 4. **Upload periodically** as your inventory changes
 
