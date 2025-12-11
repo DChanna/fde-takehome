@@ -29,9 +29,12 @@ npm start                  # PORT defaults to 3000
 - `GET /accounts/:accountNumber`
 - `GET /accounts?account_number=...`
 
+Live service: `https://fde-takehome.onrender.com`
+
 Example:
 ```bash
 curl http://localhost:3000/accounts/ACC001
+# or live: curl https://fde-takehome.onrender.com/accounts/ACC001
 ```
 
 ## Quick Test
