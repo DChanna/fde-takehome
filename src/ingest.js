@@ -157,7 +157,11 @@ async function ingestCSV(csvPath) {
 
 // Main execution
 const csvPath = process.argv[2] || DEFAULT_CSV_PATH;
-ingestCSV(csvPath).catch(err => {
-  console.error('Ingestion failed:', err);
-  process.exit(1);
-});
+ingestCSV(csvPath)
+  .then(() => {
+    process.exit(0);
+  })
+  .catch(err => {
+    console.error('Ingestion failed:', err);
+    process.exit(1);
+  });
