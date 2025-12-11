@@ -1,0 +1,6 @@
+# Dependencies and build artifacts
+node_modules/
+collectwise.db
+
+# Local PDFs and uploads
+CollectWise Engineer Take Home.pdf
