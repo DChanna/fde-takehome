@@ -5,7 +5,8 @@
   "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js",
-    "ingest": "node src/ingest.js"
+    "ingest": "node src/ingest.js",
+    "ingest:file": "node src/ingest.js"
   },
   "keywords": ["collectwise", "debt-collection", "api"],
   "author": "",

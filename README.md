@@ -17,6 +17,7 @@ npm start                  # PORT defaults to 3000
 
 ## CSV Ingestion
 - Run: `npm run ingest` or `node src/ingest.js /path/to/file.csv`
+- Custom file via npm script: `npm run ingest:file -- /path/to/file.csv`
 - Required column: `account_number` (non-empty, unique).
 - Optional columns: `debtor_name`, `phone_number`, `balance` (numeric), `status`, `client_name`.
 - Validation: rows missing `account_number` or with non-numeric `balance` are skipped.
